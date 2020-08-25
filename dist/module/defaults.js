@@ -21,7 +21,8 @@ export default {
     cookie: {
         prefix: 'auth.',
         options: {
-            path: '/'
+            path: '/',
+            readOnly: false
         }
     },
     // -- localStorage Store --

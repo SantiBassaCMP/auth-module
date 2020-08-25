@@ -164,7 +164,7 @@ export default class Storage {
         return parseCookie(cookieStr || '') || {};
     }
     setCookie(key, value, options = {}) {
-        if (!this.options.cookie || (process.server && !this.ctx.res)) {
+        if (!this.options.cookie || (process.server && !this.ctx.res) || this.options.cookie.readOnly) {
             return;
         }
         const _prefix = options.prefix !== undefined ? options.prefix : this.options.cookie.prefix;
